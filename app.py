@@ -7,6 +7,7 @@ import pandas as pd
 model = load_model("covid_prediction.keras")
 
 def pickel_loader(pickler_name, input_data):
+    print(pickler_name,input_data)
     with open(pickler_name+'.pkl', 'rb') as file:
         pickle_load = pickle.load(file)
         input_data[pickler_name] = pickle_load.transform([input_data[pickler_name]])
@@ -21,7 +22,7 @@ Shortness_of_breath=st.checkbox('Do you have symptoms of Shortness of breath?',b
 Headache=st.checkbox('Do you have symptoms of Headache?',binary_select)
 Age_60_above=st.radio('Is your age is Age 60 above?',('Yes','No'))
 Sex=st.radio('Choose your gender?',('male','female'))
-Known_contact=st.radio('Is there any covid patient on your circle',('other','Contact with confirmed'))
+Known_contact=st.radio('Is there any covid patient on your circle',('Other','Abroad'))
 
 analysis= st.button('check the covid prediction', type='primary', use_container_width=True)
 
