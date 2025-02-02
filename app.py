@@ -21,7 +21,7 @@ Shortness_of_breath=st.checkbox('Do you have symptoms of Shortness of breath?',b
 Headache=st.checkbox('Do you have symptoms of Headache?',binary_select)
 Age_60_above=st.radio('Is your age is Age 60 above?',('Yes','No'))
 Sex=st.radio('Choose your gender?',('male','female'))
-Known_contact=st.radio('Is there any covid patient on your circle',('others','Contact with confirmed'))
+Known_contact=st.radio('Is there any covid patient on your circle',('other','Contact with confirmed'))
 
 analysis= st.button('check the covid prediction', type='primary', use_container_width=True)
 
