@@ -26,7 +26,7 @@ Known_contact=st.radio('Is there any covid patient on your circle',('others','Co
 analysis= st.button('check the covid prediction', type='primary', use_container_width=True)
 
 if analysis:
-    input={
+    input_data={
         'Cough_symptoms' : Cough_symptoms,
         'Fever' : Fever,
         'Sore_throat' : Sore_throat,
@@ -38,9 +38,9 @@ if analysis:
     }
 
 
-    for key, value in input.items():
-        input = pickel_loader(key, input)
-    input_df = pd.DataFrame(input)
+    for key, value in input_data.items():
+        input_data = pickel_loader(key, input_data)
+    input_df = pd.DataFrame(input_data)
 
     with open('scaller.pkl', 'rb') as file:
         scaller_file = pickle.load(file)
